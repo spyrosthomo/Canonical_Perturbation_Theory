@@ -1,0 +1,6 @@
+\contentsline {chapter}{\numberline {1}Theoretical Introduction}{4}{chapter.1}%
+\contentsline {section}{Canonical Transformation}{5}{equation.1.0.5}%
+\contentsline {section}{Time Dependent Perturbation Theory}{6}{equation.1.0.9c}%
+\contentsline {section}{Final Remarks}{8}{equation.1.0.20}%
+\contentsline {chapter}{\numberline {2}Non-autonomous Hamiltonian }{9}{chapter.2}%
+\contentsline {section}{Numerical Part}{13}{AMS.24}%

@@ -1,0 +1,214 @@
+\chapter{Theoretical Introduction}
+%\addcontentsline{toc}{chapter}{Theoretical Introduction}
+
+
+Canonical Perturbation Theory (CPT) is the theory which helps us understand how perturbations affect the dynamics of a system which is described from an integrable Hamiltonian. So, if we have a certain Hamiltonian which, after a Canonical Transformation, can be broken into a fully integrable part and a non-integrable part, we can apply CPT and predict how the latter changes the dynamics of the initial system. 
+	
+Let's assume that we have an autonomous Hamiltonian $H_0'(\bm{q},\bm{p})$ which fully describes a system via the Hamilton's equations of motion 
+		\begin{subequations}\label{eq1}
+			\begin{alignat}{2}
+				\dot{q_i} =& \pdv{H_0'(\bm{q},\bm{p})}{p_i}\\
+				\dot{p_i} =&-\pdv{H_0'(\bm{q},\bm{p})}{q_i}, i=1,..,n
+			\end{alignat}
+	\end{subequations}
+		
+		
+ 	If we can apply a transformation which maintains the Hamiltonian character of the system, then we call it a \textit{Canonical Transformation}. 
+ 	Let's further assume that there are as many constants of motion as degrees of freedom, 2n. This means that exists a Canonical Transformation, $(\bm{q},\bm{p})\rightarrow (\bm{J},\bm{\theta})$ and $H_0'\rightarrow H_0$, which makes the new generalized position ignorable. That is, the transformed Hamiltonian is not dependent on it, thus $H_0 = H_0(\bm{J})$. These new Canonical Variables are called \textit{Action-Angle Variables}. The system can now be written as 
+ 	\begin{subequations}\label{eq2}
+		\begin{alignat}{2} 
+			\dot{\theta_i} =& \pdv{H_0(\bm{J})}{J_i} \\ 
+			\dot{J_i}      =&-\pdv{H_0(\bm{J})}{\theta_i}, i=1,..,n
+		\end{alignat} 
+	\end{subequations}
+	
+	From the second equation we can easily infer that the \textit{Action} is constant for all degrees of freedom, $J_i =\alpha_i$. From the first, we can deduce the the derivative of the \textit{Angle} is constant, thus the solution of the system is 
+	\begin{subequations}\label{eq3}
+		\begin{alignat}{2}
+			\theta_i =& \omega_{0,i} \cdot t + \theta_0 \\ 
+			J_i      =& \alpha_i
+		\end{alignat}
+	\end{subequations}
+ 	where $\omega_{0,i} = \partial(H_0(\bm{J})/\partial{J_i}$	
+	Now, we can see that the new variable $\bm{\theta}$ is named \textit{Angle} on purpose, since from equation (1a), it can be interpreted as a periodic phase with different frequency for each degree of freedom ´$\bm{\omega} = (\omega_{0,1},..,\omega_{o,n})$.
+	If we transform back to the initial variables $(\bm{J},\bm{\theta})\rightarrow(\bm{q},\bm{p})$ we have the solution of the initial system.
+	
+	However convenient it seems, the above case is, firstly extremely rare and secondly extremely sensitive. Say for example that the Hamiltonian models a real mechanical system. That system is naturally prone to imperfections which will destroy its integrable character and as a result we will not be able to apply the above method of Canonical Transformation to Action-Angle variables in order to find the solution. Or we may want to increase our system's energy, so we have to impose an external periodic stimulation.
+	All these don't mean that we are unable to study the new \textit{perturbed} system.
+	
+	The new system is now described by a Hamiltonian $H'(\bm{q},\bm{p},t)$. Due to the fact that it deviates only a little from the initial one, it can be written as 
+		\begin{equation}\label{eq4}
+			H'(\bm{q},\bm{p},t) = H_0'(\bm{q},\bm{p}) + \epsilon H_1'(\bm{q},\bm{p},t) 
+		\end{equation}
+	
+	Where, $H_0'$ is our integrable Hamiltonian and $H_1'$ is the non-integrable perturbation. So, if we apply the same Canonical Transformation as before, the new Hamiltonian, H, can be written as 
+		\begin{equation}\label{eq5}
+			H(\bm{J},\bm{\theta},t) = H_0(\bm{J}) + \epsilon H_1(\bm{J},\bm{\theta},t)
+		\end{equation}
+	
+	Our goal now is to transform the new Hamiltonian in order to push the $\bm{\theta},t$ dependence to higher order $\epsilon ^2$. In that way, we will have an approximately integrable Hamiltonian up to first order and we will be able to solve it. 
+	
+	\section{Canonical Transformation}
+	
+	The aforementioned transformation, $(\bm{J},\bm{\theta})\rightarrow(\bm{\bar{J}},\bm{\bar{\theta}})$ should as well maintain the Hamiltonian structure of our system, so that the new variables $(\bm{\bar{J}},\bm{\bar{\theta}})$ are Canonical Variables.
+	
+	The new Hamiltonian is $\bar{H} = \bar{H}(\bm{\bar{J}},\bm{\bar{\theta}})$. Both the new and the old Hamiltonians should obey the Hamilton's variational principle 
+	\begin{align}\label{eq6}
+		\left\{
+		\begin{matrix}
+				\delta\int_{t_1}^{t_2}\left( J_i \dot{\theta_i} - H(\bm{J},\bm{\theta},t)\right)dt =& 0\\
+				 \delta\int_{t_1}^{t_2}\left( \bar{J}_i \dot{\bar{\theta}}_i - \bar{H}(\bm{\bar{J}},\bm{\bar{\theta}},t)\right)dt =& 0
+		\end{matrix}  \right\}\Rightarrow \nonumber \\
+		J_i \dot{\theta}_i - H(\bm{J},\bm{\theta},t) =\bar{J}_i \dot{\bar{\theta}}_i - \bar{H}(\bm{\bar{J}},\bm{\bar{\theta}},t) + \odv{F(\bm{J},\bm{\theta},\bm{\bar{J}},\bm{\bar{\theta}},t)}{t} 
+	\end{align}
+	
+	The F function is called as the \textit{Generating Function} of the transformation. That means that it uniquely defines the transformation. Say that we want it to be dependent only on the old Angles and the new Actions,$F(\bm{\theta},\bm{\bar{J}},t)$. Our goal is to solve (\ref{eq6}) for the other two variables, $\bm{\bar{\theta}},\bm{J}$. We have  
+	
+		\begin{align*}
+			J_i\dot{\theta_i}- H(\bm{J},\bm{\theta},t) =\bar{J}_i \dot{\bar{\theta}}_i - \bar{H}(\bm{\bar{J}},\bm{\bar{\theta}},t) + \dot{\theta_i}\pdv{F}{\theta_i} + \dot{\bar{J}}_i\pdv{F}{\bar{J}_i} + \pdv{F}{t}
+		\end{align*}
+	
+	We see that there is no way to get rid of the unwanted term (1st on RHS). For that reason, we have to add one arbitrary term to the generating function which will cancel with the $J_i\dot{\bar{\theta}}_i$. Our generating function will be 
+		\begin{align}
+			F(\bm{J},\bm{\theta},\bm{\bar{J}},\bm{\bar{\theta}},t) = -\bar{J}_i\bar{\theta}_i + S(\bm{\theta},\bm{\bar{J}},t)
+		\end{align}
+	
+	Now, equation (\ref{eq6}) can be written as 
+		\begin{align}
+			J_i\dot{\theta_i}- H(\bm{J},\bm{\theta},t) =&\cancel{\bar{J}_i \dot{\bar{\theta}}_i} - \bar{H}(\bm{\bar{J}},\bm{\bar{\theta}},t) + \dot{\theta_i}\pdv{S}{\theta_i} + \dot{\bar{J}}_i\pdv{S}{\bar{J}_i} +\pdv{S}{t} - \dot{\bar{J}}_i\bar{\theta}_i - \cancel{\bar{J}_i\dot{\bar{\theta}}_i } \Rightarrow \nonumber\\
+			%
+			\textcolor{red}{J_i\dot{\theta_i}}- \textcolor{blue}{H(\bm{J},\bm{\theta},t)} =	&- \textcolor{blue}{\bar{H}(\bm{\bar{J}},\bm{\bar{\theta}},t)} +  \textcolor{red}{\dot{\theta_i}\pdv{S}{\theta_i}} + 			\textcolor{green}{\dot{\bar{J}}_i\pdv{S}{\bar{J}_i}} + \textcolor{blue}{\pdv{S}{t}} - \textcolor{green}{\dot{\bar{J}}_i\bar{\theta}_i} \Rightarrow \nonumber\\ 
+%
+		\end{align}				
+	So we obatin 
+	\begin{subequations}\label{eq9}
+			\begin{alignat}{3}
+							J_i            =& \partial{S}/\partial{\theta_i}
+							\vspace{0.4cm} \\ \vspace{0.4cm} 
+							\bar{\theta}_i =& \partial{S}/\partial{\bar{J}_i}\\
+							\bar{H}        =& H + \partial{S}/\partial{t}
+			\end{alignat}
+	\end{subequations}			
+	So now we know how each variable can be obtained by the generating function $S=S(\bm{\theta},\bar{\bm{J}},t)$. It is clear that S uniquely defines the transformation and if it is equal to $S = \theta_i\bar{J}_i$, it represents the \textit{identity transformation}, since it leaves both $\bm{J}$ and $\bm{\theta}$ unchanged.
+	\section{Time Dependent Perturbation Theory}
+	
+		We want to study a system described by (\ref{eq5}). An integrable system $H_0$ plus an non-integrable one $H_1$ which acts as a perturbation on the first. More specificaly, what we want to do is to move the $\bm{\bar{\theta}}$ dependence of $\bar{H_1}$, to higher order utilizing a Canonical Transformation $(\bm{J},\bm{\theta})\rightarrow (\bm{\bar{J}}, \bm{\bar{\theta}})$. 
+		
+		Since the non-integrable part is a perturbation, we can deduce that the generating function of the wanted trasformation will be nearly identical, with a non-identical first order part: 
+		\begin{align}\label{eq10}
+			S(\bm{\theta},\bm{\bar{J}},t) = \bar{J}_i\theta_i + \epsilon S_1(\bm{\theta},\bar{\bm{J}},t) 
+		\end{align}
+	%
+		From (\ref{eq9}) we have 
+			\begin{subequations}\label{eq11}
+					\begin{alignat}{3}
+						J_i  =& \bar{J}_i + \epsilon\pdv{S_1}{\theta_i} \\ 
+			  \bar{\theta}_i =& \theta_i + \epsilon\pdv{S_1}{\bar{J}_i} \\  	  \bar{H}(\bm{\bar{J}},\bm{\bar{\theta}},t) =& H(\bm{J},\bm{\theta},t) + \epsilon\pdv{S_1}{t}
+					\end{alignat}
+			\end{subequations}	
+	So we see that for the zero-th order approximation, the new and the old variables are the same. As for the Hamiltonian, we substitute (\ref{eq11}a), (\ref{eq11}b) into (\ref{eq11}c) and we have
+%	\vdots \\
+%	\textcolor{red}{ WRITE THE TAYLOR EXPANSION FOR THE HAMILTONIAN AND THEN SEPARATE THE ORDERS AND DERIVE EQNS 12}\\
+%	\vdots
+	%
+	%	:) Taylor 
+	%	
+	\begin{align*}
+		\bar{H}(\bm{\bar{J}},\bm{\bar{\theta}},t) =& H(\bm{J}(\bm{\bar{J}},\bm{\bar{\theta}},t), \bm{\theta}(\bm{\bar{J}},\bm{\bar{\theta}},t),t) + \epsilon \pdv{S_1}{t} \xRightarrow{(\ref{eq11}a,b)} \\ 
+		=& H_0(\bm{J}(\bm{\bar{J}},\bm{\bar{\theta}},t)) + \epsilon H_1(\bm{J}(\bm{\bar{J}},\bm{\bar{\theta}},t), \bm{\theta}(\bm{\bar{J}},\bm{\bar{\theta}},t),t)  \epsilon+\pdv{S_1}{t} \xRightarrow{(\ref{eq11}a)}\\
+		 =&  H_0\left(\bm{\bar{J}} + \epsilon\pdv{S_1}{\bm{\theta}}\right) + \epsilon H_1(\bm{J}(\bm{\bar{J}},\bm{\bar{\theta}},t), \bm{\theta}(\bm{\bar{J}},\bm{\bar{\theta}},t),t)  +\epsilon\pdv{S_1}{t} \xRightarrow{Taylor, up\hspace{0.1cm}to\hspace{0.1cm} (\epsilon^1)}\\  			
+		 =& H_0(\bm{\bar{J}}) + \epsilon \pdv{S_1}{\bm{\theta}} \pdv{H_0(\bm{\bar{J}})}{\bm{\bar{J}}} + \epsilon H_1(\bm{\bar{J}},\bm{\bar{\theta}},t) +\epsilon \pdv{S_1}{t}
+	\end{align*}		
+	%
+	So, if we separate the above equation into $0^{th}$ and $1^{st}$ orders, we have
+	
+	\begin{subequations}\label{eq12}
+			\begin{alignat}{3}
+				(\epsilon^0):\hspace{0.5cm} \bar{H}_0 =&  \bar{H_0}(\bm{\bar{J}}) = H_0(\bm{\bar{J}}) \\ 
+				(\epsilon^1):\hspace{0.5cm} \bar{H}_1 =&  \bar{H_1}(\bm{\bar{J}},\bm{\bar{\theta}},t)  \Rightarrow \nonumber \\
+					=& H_1(\bar{\bm{J}}, \bar{\bm{\theta}}, t) + \pdv{S_1}{\bm{\theta}}\cdot \bm{\omega_0}(\bm{\bar{J}})+ \pdv{S_1}{t}
+			\end{alignat}
+	\end{subequations}	
+	%
+	Where 
+		\begin{align}\label{eq13}
+			\bm{\omega_0}(\bm{\bar{J}}) = \pdv{H_0(\bm{\bar{J}})}{\bm{\bar{J}}}
+		\end{align}
+	Now we have to find which $S_1$ suits us to continue our study, since it defines uniquely the transformation. First of all, if we identify $\bm{\theta}$ as a phase, then $H_1$ has to be a periodic function with respect to $\bm{\theta}$ with period5 $T_{\theta_i} = 2\pi$. We also want time periodicity, with period $T_t = 2\pi/\Omega$.% If the perturbation was not periodic, and say
+	%
+	Since both $H_1$ and $\bar{H_1}$ are periodic with respect to both \textit{Angle} and \textit{time}, from equation (\ref{eq12}b) we have that $S_1$ should also be a periodic function of \textit{Angle} and \textit{time}
+	
+	Until now, we have two solid points from which we can continue. Firstly, the periodicity of $H_1$ and $S_1$ and secondly, the fact that we know how to solve integrable systems (with \textit{Angle and time} independent Hamiltonian).
+	The above points lead respectively to the Fourier expansion of $H_1$ and $S_1$ and the need to make $\bar{H_1}$ \textit{approximately integrable} (if we could make it exactly integrable we wouldn't need CPT :) ). 	
+	The latter requires a subtle, yet extremely useful trick which will lead to the choice of $S_1$ by connecting it with $H_1$. 
+	
+	To be more specific, the trick is as simple as separating $H_1$ into two parts;a mean value with respect to both \textit{Angle and time} plus an oscillating part
+	\begin{equation}\label{eq14}
+		H_1 = \langle H_1 \rangle_{\bm{\bar{\theta}}, t} + \{H_1\}_{\bm{\bar{\theta}}, t} 
+	\end{equation}
+	%
+Now, if we substitute into (\ref{eq12}b) we have 
+	\begin{align}\label{eq15}
+		 \bar{H_1} =& H_1(\bar{\bm{J}}, \bar{\bm{\theta}}, t) + \pdv{S_1}{\bm{\theta}}\cdot \bm{\omega_0}(\bm{\bar{J}})+ \pdv{S_1}{t} \Rightarrow\nonumber\\
+		  		  =& \langle H_1 \rangle_{\bm{\bar{\theta}}, t}(\bar{\bm{J}}) + \{H_1\}_{\bm{\bar{\theta}}, t}(\bar{\bm{J}}, \bar{\bm{\theta}}, t) + \pdv{S_1}{\bm{\theta}}\cdot \bm{\omega_0}(\bm{\bar{J}})+ \pdv{S_1}{t}
+	\end{align}
+	
+	Here is the crucial point where we will \textit{"push"} the $\bm{\theta}-t$ dependence to higher orders and at the same time we define the Canonical Transformation by defining its gerating function $S_1$. Since we can arbitrarily choose $S_1$, we choose it in order to satisfy the following relation
+	\begin{equation}\label{eq16}
+		\{H_1\}_{\bm{\bar{\theta}}, t}(\bar{\bm{J}}, \bar{\bm{\theta}}, t) + \pdv{S_1}{\bm{\theta}}\cdot \bm{\omega_0}(\bm{\bar{J}})+ \pdv{S_1}{t} = 0
+	\end{equation}	
+We finally have that 
+	\begin{align}\label{eq17}
+		\bar{H} =&  \bar{H_0} + \epsilon\bar{H_1}  \Rightarrow\nonumber\\
+				=& H_0(\bar{\bm{J}}) + \epsilon\langle H_1 \rangle_{\bm{\bar{\theta}}, t}(\bar{\bm{J}}) 
+	\end{align}
+which is dependent (approximately) only on $\bar{\bm{J}}$ and is an integrable (approximately) Hamiltonian.
+
+There is only one step left to complete the theory. That is to determine $S_1$ by writing it as a Fourier sum and obtaining the coefficients from (\ref{eq16}). The Fourier series of $\{H_1\}_{\bm{\bar{\theta}},t}$\footnotemark and $S_1$
+	\footnotetext{The function $\{H_1\}_{\bm{\bar{\theta}},t}$ has no constant part as we have taken out of it as a mean value at (\ref{eq14}). This means that we will not start the Fourier sum from 0.}
+	
+\begin{subequations}\label{eq18}
+		\begin{alignat}{2}	
+		\{H_1\}_{\bm{\bar{\theta}},t}(\bm{\bar{J}}) =& \sum_{\bm{l},m\neq0}^\infty H_{1,\bm{l},m} \cdot e^{i(\bm{l}\cdot\bm{\theta}+m\Omega t)} \\ 
+		S_1                           =& \sum_{\bm{l},m\neq0}^\infty S_{1,\bm{l},m} \cdot e^{i(\bm{l}\cdot\bm{\theta}+m\Omega t)} 
+		\end{alignat}
+\end{subequations}	
+%
+We substitute (\ref{eq18}) into (\ref{eq16}) and we have 
+	\begin{align}\label{eq19} 
+			\sum_{\bm{l},m\neq0}^\infty \left( H_{1,\bm{l},m} \cdot 
+			e^{i(\bm{l}\cdot\bm{\theta}+m\Omega t)} + \bm{\omega_0}(\bm{\bar{J}})\cdot i\bm{l} \cdot S_{1,\bm{l},m} \cdot e^{i(\bm{l}\cdot\bm{\theta}+m\Omega t)} +
+			im\Omega S_{1,\bm{l},m} \cdot e^{i(\bm{l}\cdot\bm{\theta}+m\Omega t)}\right) =& 0 \Rightarrow \nonumber \\ 
+			%
+			\sum_{\bm{l},m\neq0}^\infty \left(  H_{1,\bm{l},m} + i\left(\bm{\omega_0}(\bm{\bar{J}})\cdot \bm{l}  + m\Omega\right)\cdot S_{1,\bm{l},m}  
+					\right)e^{i(\bm{l}\cdot\bm{\theta}+m\Omega t)} =& 0  \xRightarrow{\forall\hspace{0.05cm}\bm{l},m\neq0} \nonumber \\
+			\hspace{-2cm}S_{1,\bm{l},m} =  i\frac{H_{1,\bm{l},m}}{\bm{\omega_0}(\bm{\bar{J}})\cdot \bm{l} + m\Omega}&
+	\end{align}
+%
+where $H_1$ may act as a perturbation whether $V_1,V_2<<1$.
+
+Now, the transformation which "pushes" the \textit{Angle} dependence of $\bar{H_1}$ is fully defined by equations (\ref{eq18}b) and (\ref{eq19}) and our job is just to find the Fourier coefficients of $H_1$.
+	\begin{equation}\label{eq20}
+		S_1 = \sum_{\bm{l},m\neq0}^\infty i\frac{H_{1,\bm{l},m}(\bar{\bm{J}})}{\bm{\omega_0}(\bm{\bar{J}})\cdot \bm{l} + m\Omega} \cdot e^{i(\bm{l}\cdot\bm{\theta}+m\Omega t)} 
+	\end{equation}
+
+\section{Final Remarks}
+From the above equation we can see that there may exist certain values of $\bm{l}$ and m, for which the denominator becomes zero
+	\begin{equation}\label{eq21}
+		\bm{\omega_0}(\bm{\bar{J}})\cdot \bm{l} + m\Omega = 0
+	\end{equation}
+This means that the perturbation is no longer a perturbation since it has huge values compared to the integrable part and we have a huge problem.  
+
+If we had only the integrable part, then the dynamics of the systems evolve on a n-dimensional torus with the constant \textit{Action} being the radius and the linearly increasing \textit{Angle} being the phase. 
+	There are two cases, which depend on the frequency (time derivative of the \textit{Angle}) of each degree of freedom. If the ratio of each two frequencies is a \textbf{rational} number, $\omega_i/\omega_j \in\mathbb{Q},\forall i,j$, then the motion is periodic and the trajectory does not fill the the whole "surface" of the torus. 
+	On the other hand, if the ratio is \textbf{irrational} even for one pair of frequencies, $\exists i,j: \omega_i/\omega_j\in\mathbb{R}/\mathbb{Q}$, the motion is not periodic and the trajectory densly fills the surface of the torus.
+	
+	This behaviour is easily shown with Poincare Maps. To make a Poincare Map we firstly construct a surface on the phase space in which we choose some degrees of freedom to be constant (in our case some \textit{Angles}) and we as we let the system evolve, we see where the trajectory intersects our surface. If we are in the first case of a periodic system, we will see points which will repeat after one period, whereas if we are the second case of irrational ratios, we will see dense regions of points.  
+		\begin{figure}[h!]
+			\centering 
+			\includegraphics[scale=0.3]{Theory/poin.png}
+			\caption{Poincare Diagram of a 2D periodic system}
+			\label{fig1}
+		\end{figure}
+		
+	These were about the integrable system. If we turn on the non-integrable part, as we will see at the numerical study of the Hamiltonian, there are regions that stay unaffected by it and other regions that are heavily distorted.

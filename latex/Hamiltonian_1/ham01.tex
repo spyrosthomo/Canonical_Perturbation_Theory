@@ -1,0 +1,250 @@
+\chapter{Non-autonomous Hamiltonian }
+%\addcontentsline{toc}{chapter}{Non-autonomous Hamiltonian }
+We will use the theory developed in the above text for systems with n degrees of freedom, in order to study the follwing Hamiltonian with one degree of freedom 
+	\begin{equation}\label{eq2.1}
+		H(J,\theta,t) = \bar{\omega}J + J^k + V_1cos(n_1\theta-m_1\Omega t) + V_2cos(n_2\theta-m_2\Omega t)
+	\end{equation} 
+	%
+It is obvious that it can be written as the sum of an integrable and a non-integrable Hamiltonian
+	\begin{subequations}\label{eq2.2}
+			\begin{alignat}{2}
+				H_0 =& \bar{\omega}J + J^k\\
+				H_1 =& V_1cos(n_1\theta-m_1\Omega t) + V_2cos(n_2\theta-m_2\Omega t)
+			\end{alignat}
+	\end{subequations}	
+	%
+This means that if we "turn off" the non-integrable part by setting $V_1=V_2=0$, we can easily find the frequency from the Hamilton's equation of motion for the generalized position
+	\begin{align*}\label{eq2.3}
+		\omega_0(J) =& \dot{\theta} = \pdv{H_0}{J} \Rightarrow\\
+			     =& \bar{\omega} + k J^{k-1} \numberthis
+	\end{align*}
+	%
+The non integrable part can be written as a sum of mean value and an oscillating part 
+	\begin{align*}
+		H_1 = \langle H_1 \rangle_{\theta,t} + \{ H_1 \}_{\theta,t}
+	\end{align*}
+But since it is a periodic function with respect to $\theta, t$, we have 
+	\begin{align*}
+		\langle H_1 \rangle_{\theta,t} =0
+	\end{align*}
+and since it is already a sum of cosine functions we will not use the Fourier expansion (\ref{eq18}a) but the following 
+	\begin{align}\label{eq2.4}
+		\{ H_1 \}_{\theta,t} = H_1 = \sum_{i=1,2} H_{1,i} cos(n_i\theta-m_i\Omega t)
+	\end{align}
+where 
+	\begin{equation}
+		H_{1,i} = 
+		\begin{cases}
+			V_i &, i=1,2\\
+			0   &, \text{otherwise}
+		\end{cases}
+	\end{equation}
+Similarly, we write $S_1$ as the following sum
+	\begin{align}\label{eq2.6}
+		S_1 = \sum_{i} S_{1,i} sin(n_i\theta-m_i\Omega t) 
+	\end{align}
+If we substitute (\ref{eq2.4}) and (\ref{eq2.6}) into the condition (\ref{eq16}), we have 
+	\begin{align*}
+		H_1 + \pdv{S_1}{\theta} \omega_0(\bm{\bar{J}})+ \pdv{S_1}{t} = 0 \Rightarrow\\
+		%
+		\sum_i \left( V_icos(n_i\theta-m_i\Omega t) + m_i\Omega S_{1,i}cos(n_i\theta-m_i\Omega t)  -n_iS_{1,i}cos(n_i\theta-m_i\Omega t)  \cdot \omega_0 \right) = 0 \Rightarrow \\ 
+		\sum_i\left( V_i + m_i\Omega S_{1,i}-n_iS_{1,i}\omega_0\right)cos(n_i\theta-m_i\Omega t) =0 \Rightarrow\\ 
+	\end{align*}
+We want it to hold $\forall i=\{1,2\}$
+	\begin{align*}%\label{eq2.7}
+		S_{1,i} = \frac{V_i}{-m_i\Omega + n_i(\bar{\omega}+kJ^{k-1})}, i=1,2
+	\end{align*}
+	%
+So, for each term of the expansion, we have resonance for the values for which the denominator is zero 
+	\begin{align}\label{eq2.7}
+		-m_i\Omega + n_i(\bar{\omega}+kJ^{k-1}) = 0\Rightarrow\nonumber\\
+		J_{res,i}^{k-1} =  \frac{m_i\Omega - n_i\bar{\omega}}{kn_i}
+	\end{align}
+%
+%
+%
+%========================================================================
+% Q -3 
+%========================================================================
+%
+%
+\textcolor{red}{
+\line(1,0){450}\\
+\begin{center}
+	\textbf{QUESTION 3}
+\end{center}
+\line(1,0){450}\\
+}
+
+Also, we can compute the approximate (up to first order) constant of motion $\bar{J}$ from (\ref{eq11}a)
+	\begin{align*}\label{eq2.8}
+		\bar{J} =& J - \pdv{S_1}{\theta} \Rightarrow\\ 
+		        =& J - \sum_{i=1,2}S_{1,i}n_i cos(n_i\theta-m_i\Omega t)\Rightarrow\\ 
+		        =& J - \frac{V_1n_1}{m_1\Omega + n_1(\bar{\omega}+kJ^{k-1})}cos(n_1\theta-m_1\Omega t) -\frac{V_2n_2}{m_2\Omega + n_2(\bar{\omega}+kJ^{k-1})} cos(n_2\theta-m_2\Omega t)\numberthis
+	\end{align*}
+
+
+%===============================================================
+%
+%
+%
+\textcolor{red}{
+\line(1,0){450}\\
+\begin{center}
+	\textbf{QUESTION 2}
+\end{center}
+\line(1,0){450}\\
+}
+%
+%
+%========================================================================
+% second Q
+%========================================================================
+%
+%
+%
+If we take either $V_1=0$ or $V_2=0$, then we can change the position variable with the transformation 
+	\begin{align}\label{eq2.9}
+		\hat{\theta} = n_i\theta-m_i\Omega t, \text{\hspace{.3cm}$i=$1 or 2}
+	\end{align}
+But if we want to use a Canonical Transformation, we can also choose 
+	\begin{align}\label{eq2.10}
+		\hat{J} = \alpha J 
+	\end{align}
+where $\alpha$ is to be determined. In order to demand a Canonical Transformation and by doing so, to find $\alpha$, we can use the \textit{symplectic condition} $\tilde{\bm{M}}\bm{J}\bm{M} = \bm{J}$, where $\bm{M}$ is the Jacobian of the transofrmation, or the \textit{Poisson Bracket Condition}, $[\hat{\theta},\hat{J}]=1$, or directly find a generating function. 
+
+	We will use the \textit{Poisson Bracket Condition} in order to determine $\alpha$ and then we will find the generating function of the transformation.
+	If we want the transformation to be Canonical, then the following condtion must hold 
+	\begin{align*}\label{eq2.11}
+		[\hat{\theta},\hat{J}] =& 1 \Rightarrow\\
+		\pdv{\hat{J}}{J}\pdv{\hat{\theta}}{\theta} - \cancel{\pdv{\hat{J}}{\theta}}\cancel{\pdv{\hat{\theta}}{J}} =& 1 \xRightarrow{(\ref{eq2.9}),(\ref{eq2.10})}\\ 
+		\alpha n_i =& 1 \Rightarrow\\ 
+		\alpha =& 1/n_i , \text{\hspace{.6cm}$i=$1 or 2}   \numberthis
+	\end{align*}
+%
+%
+In general, the generating function of the Canonical Transformation can be dependent on any pair of new and old variables. We choose it to be $F_2=F_2(\theta,\hat{J})$. Now, the other two variables, can be expressed with $F_2$. For $\hat{\theta}$ 
+	\begin{align*}\label{eq2.12}
+		\hat{\theta}          =& \pdv{F_2}{\hat{J}} \xRightarrow{(\ref{eq2.9})}\\ 
+		n_i\theta-m_i\Omega t =& \pdv{F_2}{\hat{J}}\xRightarrow{\theta - indep.} \\ 		
+		F_2 =& (n_i\theta-m_i\Omega t)\hat{J} + f(\theta)\numberthis
+	\end{align*}
+And for J
+	\begin{align*}
+		J  =&\pdv{F_2}{\theta} \xRightarrow{(\ref{eq2.12}),(\ref{eq2.10})} \\ 
+n_i\hat{J} =& n_i\hat{J}+f'(\theta) \Rightarrow\\ 
+		 f(\theta) =& const.				
+	\end{align*}
+So, we can ignore $f(\theta)$ since in our transformation it appears only as a derivative. Finally, the generating function is 
+	\begin{equation}\label{eq2.13}
+		F_2(\theta,\hat{J}) = (n_i\theta - m_i\Omega t)\hat{J}, \text{\hspace{.3cm}$i=$1 or 2}
+	\end{equation}
+%
+The new Hamiltonian, according to (\ref{eq9}c) is 
+	\begin{align*}\label{eq2.14}
+		\hat{H}(\hat{\theta},\hat{J}) =& H(\hat{\theta}, \hat{J}) + \partial{F_2}/\partial{t} \Rightarrow\\ 
+									  =& (\bar{\omega}n_i-m_i\Omega )\hat{J} + n_i^k\hat{J}^k +V_icos\hat{\theta} \numberthis
+	\end{align*}
+And since it depends on $\hat{\theta}$, it is not integrable, but again, it can been seen as a sum of an integrable and a non-integrable perturbation. So, from CPT and (\ref{eq11}a), the first order approximation of the new \textit{Action}, is 
+	\begin{align*}
+		\hat{\bar{J}} = \hat{J} - \epsilon\pdv{S_1}{\hat{\theta} }
+	\end{align*}
+Where $S_1$ is the same as the one we calculated (\ref{eq2.6}) for the full Hamiltonian (both $V_1,V_2\neq0$) without the one sine term, thus 
+	\begin{align*}
+		\hat{\bar{J}} = \hat{J} - \epsilon\frac{V_i}{m_i\Omega-n_i(\bar{\omega}+k\hat{J}^{k-1})}cos\hat{\theta} , \text{\hspace{.6cm}$i=$1 or 2}   \numberthis
+	\end{align*}
+	%
+	The \textit{resonance Action} can be obtained if we set the above denominator equal to zero
+		\begin{align*}\label{eq2.16}
+			m_i\Omega-n_i(\bar{\omega}+k\hat{J_{res}}^{k-1})=0 \Rightarrow\\
+			\hat{J}_{res}^{k-1} = \frac{m_i\Omega-n_i\bar{\omega}}{n_ik}\numberthis
+		\end{align*}
+	%
+	If we expand our Hamiltonian (\ref{eq2.14}) around $\hat{J}_{res}$, with $\Delta \hat{J} = \hat{J} - \hat{J}_{res}$, we have 
+\begin{align}\label{eq2.17}
+	\hat{H}\simeq&  \hat{H}(\hat{J}_{res}) + 
+					\cancel{\left. \pdv{\hat{H}}{\hat{J}}\right|_{\hat{J}_{res}}}\Delta\hat{J} +
+					 \left. \pdv[order=2]{\hat{H}}{\hat{J}}\right|_{\hat{J}_{res}}(\Delta\hat{J})^2 + O(\epsilon^2)\xRightarrow{\pdv{\theta}{t}|_{res}=0=\pdv{\hat{H}}{\hat{J}}|_{res}}\nonumber\\
+					 =& \left[(\bar{\omega}n_i-m_i\Omega )\hat{J}_{res} + n_i^k\hat{J}_{res}^k +V_icos\hat{\theta} \right]+ 
+					 \frac{1}{2}k(k-1)\hat{J}_{res}(\Delta\hat{J})^2\Rightarrow\nonumber\\
+					=& V_i cos\hat{\theta} + \frac{1}{2}k(k-1)\hat{J}_{res}(\Delta\hat{J})^2
+						+\underbrace{\left[(\bar{\omega}n_i-m_i\Omega )\hat{J}_{res} + n_i^k\hat{J}_{res}^k \right]}_{constant}
+\end{align}
+
+%		\begin{align*}\label{eq2.17}
+%			\hat{H}\simeq&  \hat{H}(\hat{J}_{res}) + 
+%					\left. \pdv{\hat{H}}{\hat{J}}\right|_{\hat{J}_{res}}(\hat{J}-\hat{J}_{res}) +
+%					 \left. \pdv[order=2]{\hat{H}}{\hat{J}}\right|_{\hat{J}_{res}}(\hat{J}-\hat{J}_{res})^2 + O(\epsilon^2)\Rightarrow\\
+%	%---------				 
+%	% 1st term			
+%			=&	\left[(\bar{\omega}n_i-m_i\Omega )\hat{J}_{res} + n_i^k\hat{J}_{res}^k +V_icos\hat{\theta} \right]+ 
+%	% 2nd term 
+%			   \left[ (\bar{\omega}-m_i\Omega) + kn_i^k\hat{J}_{res}^{k-1}\right]( \hat{J}-\hat{J}_{res}) + \\
+%	% 3rd term 
+%			&\text{\hspace{2cm}} +\left[  k(k-1)\hat{J}_{res}^{k-1} \right](\hat{J}-\hat{J}_{res})^2 \Rightarrow\\
+%			=& \textcolor{red}{n_i^k\hat{J}_{res}^{k}}+V_icos\hat{\theta} +
+%			 	\textcolor{green}{(\bar{\omega}n_i-m_i\Omega)\hat{J}}+ 
+%			 \textcolor{green}{kn_i^k\hat{J}_{res}^{k-1}\hat{J}}-\textcolor{red}{kn_i^k\hat{J}_{res}^k}
+%			+ 1/2k(k-1)n_i^k\hat{J}_{res}^{k-2}\hat{J}^2+\\
+%			&\text{\hspace{2cm}} +\textcolor{red}{1/2k(k-1)n_i^k\hat{J}_{res}^k}-\textcolor{green}{k(k-1)n_i^k\hat{J}_{res}^{k-1}\hat{J}}\Rightarrow\\
+%			%
+%			%
+%			=& \left(1-k+\frac{1}{2}k(k-1)\right)n_i^k\hat{J}_{res}^{k} +
+%			 \left( \bar{\omega}n_i-m_i\Omega + kn_i^k\hat{J}_{res}^{k-1}-k(k-1)n_i^k\hat{J}_{res}^{k-1}\right)\hat{J} +
+%			  \frac{1}{2}k(k-1)n_i^k\hat{J}_{res}^{k-2} \hat{J}^2+\\
+%			&\text{\hspace{2cm}} +V_icos\hat{\theta}	 \numberthis
+%		\end{align*} 
+
+The dynamics of the system won't depend on the constant term of the Hamiltonian, since the equations of motion contain the derivative of the Hamiltonian. So, we can see that the Hamiltonian near the resonance regions is similar to the Hamiltonian of a non-linear pendulum $H_{nlp}(\theta,J)= Acos\theta + B J^2$.
+
+
+%
+\textcolor{red}{
+\line(1,0){450}\\
+\begin{center}
+	\textbf{QUESTION 4}
+\end{center}
+\line(1,0){450}\\
+}
+%
+%
+%========================================================================
+% 4ρδ Q
+%========================================================================
+%
+%
+
+\section*{Removal of Resonances}
+	When we are near the resonance regions, among others, we have the problem that our new approximate constant of motion $\bar{J}$ not only is not constant, but it goes to infinity ( we can see this from (\ref{eq2.8} ). So we want to construct a true approximate constant of motion which does not go to infinity. 
+	Any function of the "constant" $\bar{J}$ is going to be a constant, so let's assume the our new constant is $I(\bar{J})$.
+	Then we can use its Taylor expansion and (\ref{eq11}a)
+		\begin{align*}\label{eq2.18}
+			I(\bar{J}) =& I\left(J-\epsilon \pdv{S_1}{\theta}\right) \Rightarrow\\
+					   =& I(J) - \epsilon\pdv{S_1}{\theta}\odv{I}{J}\numberthis
+		\end{align*}
+%
+	We have not yet solved the problem. We see that the term $\partial{S_1}/\partial{\theta}$ that goes to infity still exists in our relation. But now, since I is an arbitrary function of $\bar{J}$, we can choose it in a way that it cancels that second term at resonances. That is 
+		\begin{align*}\label{eq2.19}
+			\left.\odv{I}{J}\right|_{resonances} = 0 \numberthis
+		\end{align*}
+Since the conditions for the resonances are given by (\ref{eq2.7}), the condition for eliminating the unwanted term from $I(\bar{J})$ is 
+	\begin{align*}\label{eq2.20}
+		\odv{I}{J} =& \prod_{i=1,2}C_i\left(m_i\Omega - n_i(\bar{\omega}+kJ^{k-1})\right)\Rightarrow\\
+		            =&C_1C_2\left(m_1\Omega - n_1(\bar{\omega}+kJ^{k-1})\right)\left(m_2\Omega - n_2(\bar{\omega}+kJ^{k-1})\right) \Rightarrow\\ 
+		            =&C_1C_2 \left( (m_1\Omega - n_1\bar{\omega})(m_2\Omega - n_2\bar{\omega})+  \left[n_1(m_2\Omega - n_2\bar{\omega}))+ n_2(m_1\Omega - n_1 \bar{\omega})\right]J^{k-1}
+		            +
+		         n_1n_2k^2J^{2k-2}    \right) \numberthis
+	\end{align*}
+	%
+	So, from (\ref{eq2.18}), if we integrate (\ref{eq2.20}), we have that 
+	\begin{align*}\label{eq2.21}
+		I(J) = C_1C_2 \left( (m_1\Omega - n_1\bar{\omega})(m_2\Omega - n_2\bar{\omega})J + \left[n_1(m_2\Omega - n_2\bar{\omega})+ n_2(m_1\Omega - n_1 \bar{\omega})\right]\frac{J^{k}}{k}
+		            +
+		         n_1n_2k^2\frac{J^{2k-1}}{2k-1}    \right) - \\
+	\hspace{1cm}- C_1C_2\left(m_1\Omega - n_1(\bar{\omega}+kJ^{k-1})\right)\left(m_2\Omega - n_2(\bar{\omega}+kJ^{k-1})\right)\cdot \\ 
+	\cdot\left( \frac{V_1n_1}{m_1\Omega - n_1(\bar{\omega}+kJ^{k-1})}sin(n_1\theta-m_1\Omega t)+\frac{V_2n_2}{m_2\Omega - n_2(\bar{\omega}+kJ^{k-1})} sin(n_2\theta-m_2\Omega t)\right)\numberthis
+	\end{align*}		
+%
+%If we combline (\ref{eq2.21}) \& (\ref{eq2.20}) with (\ref{eq2.18}) we obtain the %new constant of motion which does not go to infinity at the resonances.
+
+
